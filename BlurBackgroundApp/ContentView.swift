@@ -31,10 +31,10 @@ struct ContentView: View {
 
 public struct BlurBackgroundView<Content: View>: View {
     private var background: Image
-    private var blur: CGFloat = 20
+    private var blur: CGFloat
     private var content: () -> Content
 
-    init(background: Image, blur: CGFloat, @ViewBuilder content: @escaping () -> Content) {
+    init(background: Image, blur: CGFloat = 20, @ViewBuilder content: @escaping () -> Content) {
         self.background = background
         self.blur = blur
         self.content = content
